@@ -1,39 +1,54 @@
 // nav background
 let posts = []
 const res = localStorage.getItem('posts')
-     posts = res ? JSON.parse(res) : []
-     console.log(posts);
+posts = res ? JSON.parse(res) : []
 let header = document.querySelector("header");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll", () =>
+{
     header.classList.toggle("shadow", window.scrollY > 0)
 })
 //Filter
-$(document).ready(function () {
-    $(".filter-item").click(function () {
+$(document).ready(function ()
+{
+    $(".filter-item").click(function ()
+    {
         const value = $(this).attr("data-filter");
-        if (value === "food"){
-            const postsFood = posts.filter((item) =>{
-                return item.category.includes('food')
-            })
-            console.log(postsFood);
+
+        if (value == 'all') {
+            handleShowPosts(posts, true)
+        } else {
+
+            const items = posts.filter(element => (element.category).toLowerCase() === value)
+
+            handleShowPosts(items, true)
         }
     });
-    $(".filter-item").click(function () {
+    $(".filter-item").click(function ()
+    {
         $(this).addClass("active-filter").siblings().removeClass("active-filter")
     });
 });
 
 
-const handleShowPosts = () => {
-    if (posts.length > 0) {
-        posts.forEach((post, index) => {
+const handleShowPosts = (data, replace) =>
+{
+
+    const parrentChild = document.getElementById('post-container')
+
+    if (data.length > 0) {
+
+        const container = document.createElement('div')
+        container.setAttribute('class', 'post container')
+
+        data.forEach((post, index) =>
+        {
+            const postContent = document.createElement('div')
 
             const datetime = new Date(post.createdAt)
 
-            const postContent = document.createElement('div')
             postContent.setAttribute('class', ' col-4')
-            postContent.setAttribute('id',`posts${index}`)
+            postContent.setAttribute('id', `posts${index}`)
             postContent.setAttribute('style', 'padding: 0 10px')
             const newPost = `
             <div class="post-box food">
@@ -50,19 +65,35 @@ const handleShowPosts = () => {
             <button onclick=handleRemove(${index})><i class="fa-solid fa-xmark"></i></button>
            </div>
             `
-            
-             postContent.innerHTML = newPost
 
-             document.getElementById('post-container').appendChild(postContent)
+            postContent.innerHTML = newPost
 
-       
+            container.appendChild(postContent)
         })
+
+
+        if (replace) {
+
+            parrentChild.replaceChild(container, parrentChild.children[0])
+        } else {
+
+            document.getElementById('post-container').appendChild(container)
+        }
+    } else {
+        const emptyData = document.createElement('div')
+        emptyData.setAttribute('class', 'container col mt-4 text-center')
+        emptyData.innerHTML = 'Data not found'
+
+        parrentChild.replaceChild(emptyData, parrentChild.children[0])
     }
 }
 
-handleShowPosts()
-function handleRemove(index){
-    posts.splice(index,1)
-    localStorage.setItem('posts',JSON.stringify(posts))
+handleShowPosts(posts)
+
+
+function handleRemove(index)
+{
+    posts.splice(index, 1)
+    localStorage.setItem('posts', JSON.stringify(posts))
     document.getElementById(`posts${index}`).remove()
 }

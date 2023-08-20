@@ -1,0 +1,182 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Blogger</title>
+		<!-- Box-icon -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="../css/style.css" />
+		<style>
+			.fa-solid {
+			}
+			.form {
+				display: flex;
+				justify-content: flex-end;
+				background-color: blueviolet;
+				margin-left: 507px;
+			}
+			.form1 {
+				background-color: blueviolet;
+			}
+
+			.login {
+				/* background-color: blueviolet; */
+				padding: 10px;
+				margin: 0 10px;
+				border-radius: 12px;
+			}
+			.login:hover {
+				background-color: blueviolet;
+				padding: 10px;
+				margin: 0 10px;
+				border-radius: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="container p-3">
+				<div class="row">
+					<div class="col">
+						<a href="#" class="logo"><span>Your Blog</span></a>
+					</div>
+
+					<div class="col text-right d-flex justify-content-end">
+						<a href="../auth/sign-up.html" class="login">Sign Up</a>
+						<a href="../auth/sign-in.html" class="login">Sign In</a>
+					</div>
+				</div>
+				<!-- 
+				<div class="form">
+					<a href="../auth/sign-up.html" class="login">Sign Up</a>
+				</div>
+				<div class="form1">
+					
+				</div>
+			</div> -->
+			</div>
+		</header>
+
+		<section class="home" id="home">
+			<div class="home-text container">
+				<h2 class="home-title">Trend Blogger</h2>
+				<span class="home-subtitle">Your source of great content</span>
+			</div>
+		</section>
+
+		<section class="about container" id="about">
+			<div class="contentBx">
+				<h2 class="titleText">Catch up with the trending topics</h2>
+				<p class="title-text">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eos
+					consequuntur voluptate dolorum totam provident ducimus cupiditate
+					dolore doloribus repellat. Saepe ad fugit similique quis quam. Odio
+					suscipit incidunt distinctio.
+					<br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+					blanditiis libero pariatur ipsum suscipit voluptates aut, repellendus
+					quos dolor autem, natus laboriosam consectetur maxime cumque, sunt
+					magni optio? Veritatis, ea?
+				</p>
+				<a href="#" class="btn2">Read more</a>
+			</div>
+			<div class="imgBx">
+				<img
+					src="https://github.com/codemyhobby100/Blog-Tutorial/blob/master/images/banner.png?raw=true"
+					alt=""
+					class="fitBg"
+				/>
+			</div>
+		</section>
+
+		<div class="post-filter container">
+			<span class="filter-item active-filter" data-filter="all">All</span>
+			<span class="filter-item" data-filter="tech">Tech</span>
+			<span class="filter-item" data-filter="food">Food</span>
+			<span class="filter-item" data-filter="news">News</span>
+		</div>
+
+		<div class="" id="post-container"></div>
+
+		<a href="./posts/add-new.html" class="btn btn-sm btn-success">New post</a>
+
+		<footer>
+			<div class="footer-container">
+				<div class="sec aboutus">
+					<h2>About Us</h2>
+					<p>
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus
+						quisquam minus quo illo numquam vel incidunt pariatur hic commodi
+						expedita tempora praesentium at iure fugiat ea, quam laborum aperiam
+						veritatis.
+					</p>
+					<ul class="sci">
+						<li>
+							<a href="#"><i class="bx bxl-facebook"></i></a>
+						</li>
+						<li>
+							<a href="#"><i class="bx bxl-instagram"></i></a>
+						</li>
+						<li>
+							<a href="#"><i class="bx bxl-twitter"></i></a>
+						</li>
+						<li>
+							<a href="#"><i class="bx bxl-linkedin"></i></a>
+						</li>
+					</ul>
+				</div>
+				<div class="sec quicklinks">
+					<h2>Quick Links</h2>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+				</div>
+				<div class="sec contactBx">
+					<h2>Contact Info</h2>
+					<ul class="info">
+						<li>
+							<span><i class="bx bxs-map"></i></span>
+							<span
+								>6444 London street <br />
+								Brighton PA 33445 <br />
+								Uk</span
+							>
+						</li>
+						<li>
+							<span><i class="bx bx-envelope"></i></span>
+							<p>
+								<a href="mailto:codemyhobby9@gmail.com"
+									>Codemyhobby9@gmail.com</a
+								>
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+			integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="./home/main.js"></script>
+	</body>
+</html>
